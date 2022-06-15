@@ -1,7 +1,8 @@
-const Country = ({name,id,setVisited}) => {
+const Country = ({name,id}) => {
+
     return(
         <>
-        <li key={id}>{name}</li><button onClick={() => setVisited(prev=> ({...prev, visited: !prev.visited}))}>Visited</button>
+        <li key={id}>{name}</li><button>Visited</button>
         </>
     )
 }
