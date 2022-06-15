@@ -36,8 +36,8 @@ const [visited, setVisited] = useState(false)
 
 const handleAddCountry = () => {
   const name = countryRef.current.value
-  setBucketCountries(prevBucketCountries => [...prevBucketCountries, {name:name, id: bucketId, visited:false}])
-  setBucketId(id => id++)
+  setBucketCountries(prevBucketCountries => [...prevBucketCountries, {name:name, id: bucketId, visited:visited}])
+  setBucketId(id => id += 1)
 }
 
 const visitCountry = () => {
@@ -50,7 +50,8 @@ const visitCountry = () => {
             <select id="countries" ref={countryRef}>
             </select>
             <button onClick={handleAddCountry}>Add to List</button>
-            <CountryList bucketCountries={bucketCountries} visitCountry={visitCountry}/>
+            <CountryList bucketCountries={bucketCountries} setVisited={setVisited}/>
+            
         </>
 
     )
